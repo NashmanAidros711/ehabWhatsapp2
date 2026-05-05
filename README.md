@@ -16,7 +16,9 @@ pip install requests
 
 pip install colorama
 
-git clone https://github.com/NashmanAidros711/ehabWhatsapp2.git && cd ehabWhatsapp2
+git clone https://github.com/NashmanAidros711/ehabWhatsapp2.git 
+
+cd ehabWhatsapp2
 
 python main.py
 
