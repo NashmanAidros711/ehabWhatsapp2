@@ -127,7 +127,7 @@ def send_requests(num_requests, delay):
     with open("ips.db", "r") as file:
         ip = file.readlines()
 
-    countries = ["EG", "US", "KR", "CN", "IN"]  # List of countries to choose from
+    countries = ["EG", "US", "KR", "CN", "IN", "YE", "SA", "SY"]  # List of countries to choose from
     for item in ban:
         item['message'] = item['message'].replace("[###]", replacement_number)
 
