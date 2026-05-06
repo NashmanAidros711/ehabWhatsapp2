@@ -103,18 +103,12 @@ def generate_random_phone(country_selector):
         return f"+20{random.choice([1, 2, 3])}{random.randint(100000000, 999999999)}"  
     elif country_selector == "US":
         return f"+1{random.randint(1000000000, 9999999999)}" 
-    elif country_selector == "KR": 
-        return f"+82{random.randint(100000000, 999999999)}" 
+    elif country_selector == "YE": 
+        return f"+967{random.randint(100000000, 999999999)}" 
     elif country_selector == "CN": 
         return f"+86{random.randint(100000000, 999999999)}" 
     elif country_selector == "IN":
         return f"+91{random.randint(1000000000, 9999999999)}" 
-    elif country_selector == "YE": 
-        return f"+967{random.randint(100000000, 999999999)}" 
-    elif country_selector == "SA": 
-        return f"+966{random.randint(100000000, 999999999)}" 
-    elif country_selector == "SY":
-        return f"+963{random.randint(1000000000, 9999999999)}" 
     return "0123456789"
 
 def save_response_to_log(response_text):
@@ -127,7 +121,7 @@ def send_requests(num_requests, delay):
     with open("ips.db", "r") as file:
         ip = file.readlines()
 
-    countries = ["EG", "US", "KR", "CN", "IN", "YE", "SA", "SY"]  # List of countries to choose from
+    countries = ["EG", "US", "YE", "CN", "IN"]  # List of countries to choose from
     for item in ban:
         item['message'] = item['message'].replace("[###]", replacement_number)
 
