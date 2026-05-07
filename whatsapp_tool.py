@@ -48,7 +48,7 @@ def get_request_count():
             print(Fore.RED + "Please enter a valid number.")
 num_requests = get_request_count()        
 # Target URL
-url = "https://www.whatsapp.com/contact/noclient/async/new/"
+url = "https://www.whatsapp.com/contact/noclient/verification/async/new/"
 
 # Request headers
 headers = {
@@ -67,7 +67,7 @@ headers = {
     "Sec-Fetch-Site": "same-origin",
     "Sec-Fetch-Mode": "cors",
     "Sec-Fetch-Dest": "empty",
-    "Referer": "https://www.whatsapp.com/contact/noclient?",
+    "Referer": "https://www.whatsapp.com/contact/noclient/verification?",
     "Accept-Encoding": "gzip, deflate, br"
 }
 
@@ -103,8 +103,8 @@ def generate_random_phone(country_selector):
         return f"+20{random.choice([1, 2, 3])}{random.randint(100000000, 999999999)}"  
     elif country_selector == "US":
         return f"+1{random.randint(1000000000, 9999999999)}" 
-    elif country_selector == "YE": 
-        return f"+967{random.randint(100000000, 999999999)}" 
+    elif country_selector == "KR": 
+        return f"+82{random.randint(100000000, 999999999)}" 
     elif country_selector == "CN": 
         return f"+86{random.randint(100000000, 999999999)}" 
     elif country_selector == "IN":
@@ -121,7 +121,7 @@ def send_requests(num_requests, delay):
     with open("ips.db", "r") as file:
         ip = file.readlines()
 
-    countries = ["EG", "US", "YE", "CN", "IN"]  # List of countries to choose from
+    countries = ["EG", "US", "KR", "CN", "IN"]  # List of countries to choose from
     for item in ban:
         item['message'] = item['message'].replace("[###]", replacement_number)
 
@@ -164,4 +164,5 @@ def send_requests(num_requests, delay):
 
 # Send 5 requests with a 10-second delay between each request
 send_requests(num_requests, 10)
+
 
